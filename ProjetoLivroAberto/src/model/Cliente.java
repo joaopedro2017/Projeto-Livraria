@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author Posto Figueira
+ * @author JPGP
  */
 public class Cliente {
     
@@ -16,9 +16,10 @@ public class Cliente {
     private String estadoCivil;
     private String telefone;
     private String email;
+    private Endereco endereco;
 
     public Cliente() {
-        
+        endereco = new Endereco();        
     }
 
     public Cliente(String CPF, String nome, String estadoCivil, String telefone, String email) {
@@ -27,6 +28,7 @@ public class Cliente {
         this.estadoCivil = estadoCivil;
         this.telefone = telefone;
         this.email = email;
+        endereco = new Endereco();
     }
 
     public String getCPF() {

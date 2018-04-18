@@ -54,6 +54,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Controle da Livraria Livro Aberto");
         setExtendedState(6);
+        setUndecorated(true);
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -140,7 +141,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(696, 467));
+        setSize(new java.awt.Dimension(680, 429));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
