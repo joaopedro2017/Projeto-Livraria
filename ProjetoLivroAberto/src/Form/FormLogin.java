@@ -157,7 +157,8 @@ public class FormLogin extends javax.swing.JFrame {
         String senha = new String (jpfSenha.getPassword());        
         if(usuario.validarMatricula(matricula) || usuario.validarSenha(senha)){
             if(usuario.efetuarLogin(matricula, senha)){
-                JOptionPane.showMessageDialog(null, "Login Com Sucesso");
+                this.dispose();
+                new FormPrincipal().setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "Matricula ou Senha estão incorretos!");
             }
