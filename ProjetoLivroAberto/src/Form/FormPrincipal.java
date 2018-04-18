@@ -77,6 +77,11 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jMenuCliente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuCliente.setText("Cliente");
+        jMenuCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuClienteActionPerformed(evt);
+            }
+        });
         jMenuCadastro.add(jMenuCliente);
 
         jMenuProduto.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -155,6 +160,10 @@ public class FormPrincipal extends javax.swing.JFrame {
         JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]); 
         if (decisao == JOptionPane.YES_OPTION) this.dispose();
     }//GEN-LAST:event_jMenuSairActionPerformed
+
+    private void jMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClienteActionPerformed
+        new FormCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuClienteActionPerformed
 
     /**
      * @param args the command line arguments
