@@ -70,5 +70,21 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    } 
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "\nCPF=" + CPF + ", \nnome=" + nome + 
+                ", \nestadoCivil=" + estadoCivil + ", \ntelefone=" + telefone + 
+                ", \nemail=" + email + ", \nendereco=" + endereco + '}';
+    }
+    
     
 }
