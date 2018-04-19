@@ -5,6 +5,7 @@
  */
 package Form;
 
+import dao.ClienteDao;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,11 +13,14 @@ import javax.swing.JOptionPane;
  * @author Posto Figueira
  */
 public class FormPrincipal extends javax.swing.JFrame {
+    
+    public static ClienteDao bdCliente;
 
     /**
      * Creates new form FormPrincipal
      */
     public FormPrincipal() {
+        bdCliente = new ClienteDao();
         initComponents();
     }
 
@@ -103,6 +107,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         jMenuConsulta.setText("Consulta");
 
         jMenuICliente.setText("Clientes");
+        jMenuICliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuIClienteActionPerformed(evt);
+            }
+        });
         jMenuConsulta.add(jMenuICliente);
 
         jMenuIProduto.setText("Produtos");
@@ -157,13 +166,17 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void jMenuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuSairActionPerformed
         Object[] options = {"Sim", "Não"}; 
         int decisao = JOptionPane.showOptionDialog(null, "Tem certeza que deseja sair?", "ATENÇÃO", 
-        JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, options, options[0]); 
+        JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]); 
         if (decisao == JOptionPane.YES_OPTION) this.dispose();
     }//GEN-LAST:event_jMenuSairActionPerformed
 
     private void jMenuClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuClienteActionPerformed
         new FormCliente().setVisible(true);
     }//GEN-LAST:event_jMenuClienteActionPerformed
+
+    private void jMenuIClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuIClienteActionPerformed
+        new FormConsultaCliente().setVisible(true);
+    }//GEN-LAST:event_jMenuIClienteActionPerformed
 
     /**
      * @param args the command line arguments
